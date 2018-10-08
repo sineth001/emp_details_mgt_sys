@@ -95,7 +95,7 @@ public class DBConnect {
     public void editEmployee(int emp_id ){
 
         try{
-            System.out.println("Edit employee detail detail");
+            System.out.println("Edit employee detail detail for id = "+emp_id);
             Scanner keyboard=new Scanner(System.in);
             System.out.println("Employee  name");
             String name=keyboard.nextLine();
@@ -107,7 +107,7 @@ public class DBConnect {
             String contact=keyboard.nextLine();
 
             System.out.println("------------------------");
-            System.out.println("Employee detail that you entered are followings.");
+            System.out.println("Employee detail that you updated are followings.");
 
             System.out.println("Name :"+name);
             System.out.println("Position : "+position);
@@ -115,7 +115,7 @@ public class DBConnect {
             System.out.println("Contact : "+contact);
 
 
-            String query="update employee set name = ?, position= ?,birth_day=?, contact=? where id="+emp_id;
+            String query="update employee set name = ?, position= ?,birth_day=?, contact_number=? where id="+emp_id;
             PreparedStatement preparedStmt = con.prepareStatement(query);
 
             preparedStmt.setString(1,name);
@@ -124,6 +124,23 @@ public class DBConnect {
             preparedStmt.setString(4,contact);
 
             preparedStmt.executeUpdate();
+
+
+        }catch (Exception ex){
+            System.out.println("Error :"+ ex);
+        }
+
+    }
+
+    public void deleteEmployee(int emp_id){
+
+        try{
+
+            String query = "delete from employee where id = "+emp_id;
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+            preparedStmt.execute();
+
+            System.out.println("employee id : "+emp_id +"  deleted" );
 
 
         }catch (Exception ex){

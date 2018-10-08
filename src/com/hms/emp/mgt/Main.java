@@ -19,7 +19,9 @@ public class Main {
         DBConnect connect =new DBConnect();
 
 //        connect.viewEmployee();
-        connect.enterEmployee();
+//        connect.enterEmployee();
+//        connect.editEmployee(1);
+        connect.deleteEmployee(1);
 
 
     }
