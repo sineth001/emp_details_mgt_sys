@@ -1,4 +1,5 @@
 package com.hms.emp.mgt;
+import java.util.Scanner;
 
 public class Main {
 
@@ -16,13 +17,38 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
 
-        DBConnect connect =new DBConnect();
+        DBConnect connect = new DBConnect();
+        connect.viewEmployee();
 
-//        connect.viewEmployee();
-//        connect.enterEmployee();
-//        connect.editEmployee(1);
-        connect.deleteEmployee(1);
+        System.out.println("Enter 1 for Insert new employee");
+        System.out.println("Enter 2 for Insert new employee");
+        System.out.println("Enter 3 for Insert new employee");
 
+        Scanner keyboard=new Scanner(System.in);
+//        System.out.println("Employee  name");
+        int input=keyboard.nextInt();
+
+        switch(input) {
+            case 1 :
+                connect.enterEmployee();
+                break;
+
+            case 2 :
+                System.out.println("Enter employee id that you need to edit");
+                int emp_id=keyboard.nextInt();
+                connect.editEmployee(1);
+                break;
+
+            case 3 :
+                System.out.println("Enter employee id that you need to delete");
+                int id=keyboard.nextInt();
+                connect.deleteEmployee(1);
+                break;
+
+
+            default :
+
+        }
 
     }
 }
