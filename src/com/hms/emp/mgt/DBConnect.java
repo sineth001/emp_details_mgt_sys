@@ -1,7 +1,7 @@
 package com.hms.emp.mgt;
 
 
-
+//import java.util.Calendar;
 import java.util.Scanner;
 
 import java.sql.*;
@@ -74,16 +74,57 @@ public class DBConnect {
             System.out.println("Contact : "+contact);
 
 
-//            preparedStmt.setString(1,name);
-//            preparedStmt.setString(2,position);
-//            preparedStmt.setString(3, birth_day);
-//            preparedStmt.setString(4, contact);
-
-
-
             String query="insert into employee(name,position,birth_day,contact_number) " +
-                            "values (default,"+name+","+position+","+birth_day+","+contact+" )";
-            rs= st.executeQuery(query);
+                            "values ( ?, ?, ?, ?)";
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+
+            preparedStmt.setString(1,name);
+            preparedStmt.setString(2,position);
+            preparedStmt.setString(3, birth_day);
+            preparedStmt.setString(4, contact);
+
+            preparedStmt.execute();
+
+
+        }catch (Exception ex){
+            System.out.println("Error :"+ ex);
+        }
+
+    }
+
+    public void editEmployee(int emp_id ){
+
+        try{
+            System.out.println("Edit employee detail detail");
+            Scanner keyboard=new Scanner(System.in);
+            System.out.println("Employee  name");
+            String name=keyboard.nextLine();
+            System.out.println("Position of employee");
+            String position=keyboard.nextLine();
+            System.out.println("Date of birth (yyyy-mm-dd)");
+            String birth_day=keyboard.nextLine();
+            System.out.println("Employee contact");
+            String contact=keyboard.nextLine();
+
+            System.out.println("------------------------");
+            System.out.println("Employee detail that you entered are followings.");
+
+            System.out.println("Name :"+name);
+            System.out.println("Position : "+position);
+            System.out.println("Date of birth : "+birth_day);
+            System.out.println("Contact : "+contact);
+
+
+            String query="update employee set name = ?, position= ?,birth_day=?, contact=? where id="+emp_id;
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+
+            preparedStmt.setString(1,name);
+            preparedStmt.setString(2,position);
+            preparedStmt.setString(3,birth_day);
+            preparedStmt.setString(4,contact);
+
+            preparedStmt.executeUpdate();
+
 
         }catch (Exception ex){
             System.out.println("Error :"+ ex);
