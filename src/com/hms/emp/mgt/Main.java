@@ -15,34 +15,32 @@ public class Main {
 
 
     public static void main(String[] args) {
-        // write your code here
 
-        DBConnect connect = new DBConnect();
-        connect.viewEmployee();
+
+        //make db connection
+        Employee emp=new Employee();
+        emp.viewEmployeeDetail();
 
         System.out.println("Enter 1 for Insert new employee");
         System.out.println("Enter 2 for Insert new employee");
         System.out.println("Enter 3 for Insert new employee");
 
         Scanner keyboard=new Scanner(System.in);
-//        System.out.println("Employee  name");
         int input=keyboard.nextInt();
 
         switch(input) {
             case 1 :
-                connect.enterEmployee();
+                emp.enterEmployeeDetail();
                 break;
 
             case 2 :
-                System.out.println("Enter employee id that you need to edit");
-                int emp_id=keyboard.nextInt();
-                connect.editEmployee(1);
+
+                emp.editEmployeeDetail();
                 break;
 
             case 3 :
-                System.out.println("Enter employee id that you need to delete");
-                int id=keyboard.nextInt();
-                connect.deleteEmployee(1);
+
+                connect.deleteEmployee(id);
                 break;
 
 
