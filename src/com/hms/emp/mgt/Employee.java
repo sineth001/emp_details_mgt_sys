@@ -47,10 +47,13 @@ public class Employee {
 
     }
     public void  editEmployeeDetail() {
-        Scanner keyboard = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         System.out.println("Enter employee id that you need to edit");
-        int id=keyboard.nextInt();
+        int id=input.nextInt();
+
         System.out.println("Edit employee detail detail for id = " + id);
+
+        Scanner keyboard = new Scanner(System.in);
         System.out.println("Employee  name");
         String name = keyboard.nextLine();
         System.out.println("Position of employee");
@@ -69,7 +72,7 @@ public class Employee {
         System.out.println("Contact : " + contact);
 
         DBConnect connect = new DBConnect();
-        connect.updateEmployee(name,position,birthDay,contact,empId);
+        connect.updateEmployee(name,position,birthDay,contact,id);
 
     }
 

@@ -22,8 +22,8 @@ public class Main {
         emp.viewEmployeeDetail();
 
         System.out.println("Enter 1 for Insert new employee");
-        System.out.println("Enter 2 for Insert new employee");
-        System.out.println("Enter 3 for Insert new employee");
+        System.out.println("Enter 2 for Update new employee");
+        System.out.println("Enter 3 for Delete an employee");
 
         Scanner keyboard=new Scanner(System.in);
         int input=keyboard.nextInt();
@@ -40,7 +40,7 @@ public class Main {
 
             case 3 :
 
-                connect.deleteEmployee(id);
+                emp.removeEmployee();
                 break;
 
 
