@@ -17,9 +17,10 @@ public class Main {
     public static void main(String[] args) {
 
 
-        //make db connection
-        Employee emp=new Employee();
+
+        Employee emp=new Employee(); // create object
         emp.viewEmployeeDetail();
+        System.out.println();
 
         System.out.println("Enter 1 for Insert new employee");
         System.out.println("Enter 2 for Update new employee");

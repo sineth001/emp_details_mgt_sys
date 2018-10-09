@@ -14,6 +14,9 @@ public class DBConnect {
     private ResultSet rs;
 
 
+    /**
+     * make DB connection with mysql in the constructor of the DBConnect
+     */
     public DBConnect() {
         try {
 
@@ -27,6 +30,9 @@ public class DBConnect {
         }
     }
 
+    /**
+     * execute insert query to get all of employee table
+     */
     public void selectEmployee() {
 
 
@@ -53,6 +59,15 @@ public class DBConnect {
 
     }
 
+    /**
+     *
+     * insert user entered data in the employee table.
+     *
+     * @param name employee name
+     * @param position position of the employee
+     * @param birthDay date of birth
+     * @param contact  contact number
+     */
     public void insertEmployee( String name,String position,String birthDay,String contact ) {
 
         try {
@@ -75,6 +90,16 @@ public class DBConnect {
 
     }
 
+    /**
+     *
+     * update user entered data in the employee table by given employee id.
+     *
+     * @param name employee name
+     * @param position position  of employee
+     * @param birthDay date of birth
+     * @param contact contact number
+     * @param empId employee id to identify employee
+     */
     public void updateEmployee( String name,String position,String birthDay,String contact, int empId) {
 
         try {
@@ -96,6 +121,12 @@ public class DBConnect {
 
     }
 
+    /**
+     *
+     * Delete employee by given employee id
+     *
+     * @param empId employee id to identify employee
+     */
     public void deleteEmployee(int empId) {
 
         try {

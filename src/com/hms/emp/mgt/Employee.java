@@ -10,15 +10,21 @@ public class Employee {
 //        Delete employee details
 
 
-
+    /**
+     * run the select_employee method in DBConnect
+     */
     public void  viewEmployeeDetail() {
-        DBConnect connect = new DBConnect();
+
+        System.out.println("All employees ");
+        DBConnect connect = new DBConnect(); //Create object
         connect.selectEmployee();
 
 
     }
 
-
+    /**
+     * Get user input to add new employee
+     */
     public void  enterEmployeeDetail() {
 
         Scanner keyboard = new Scanner(System.in);
@@ -43,9 +49,12 @@ public class Employee {
         DBConnect connect = new DBConnect();
         connect.insertEmployee(name,position,birthDay,contact);
 
-
-
     }
+
+    /**
+     * get user input to update employee
+     * Edit employee by id
+     */
     public void  editEmployeeDetail() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter employee id that you need to edit");
@@ -76,6 +85,9 @@ public class Employee {
 
     }
 
+    /**
+     * get user input of employee id to delete employee
+     */
     public void  removeEmployee() {
 
 
