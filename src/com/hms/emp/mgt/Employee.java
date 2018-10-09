@@ -4,12 +4,6 @@ import java.util.Scanner;
 
 public class Employee {
 
-//        Enter Employee details
-//        Edit Employee details
-//        View employee details
-//        Delete employee details
-
-
     /**
      * run the select_employee method in DBConnect
      */
@@ -35,6 +29,7 @@ public class Employee {
         System.out.println("Date of birth (yyyy-mm-dd)");
         String birthDay = keyboard.nextLine();
 
+
         System.out.println("Employee contact");
         String contact = keyboard.nextLine();
 
@@ -45,9 +40,12 @@ public class Employee {
         System.out.println("Position : " + position);
         System.out.println("Date of birth : " + birthDay);
         System.out.println("Contact : " + contact);
+        System.out.println("Permanent : no " );
+
+        String permanent= "no";
 
         DBConnect connect = new DBConnect();
-        connect.insertEmployee(name,position,birthDay,contact);
+        connect.insertEmployee(name,position,birthDay,contact,permanent);
 
     }
 
@@ -71,6 +69,8 @@ public class Employee {
         String birthDay = keyboard.nextLine();
         System.out.println("Employee contact");
         String contact = keyboard.nextLine();
+        System.out.println("Is permanent  yes/no");
+        String  permanent = keyboard.nextLine();
 
         System.out.println("------------------------");
         System.out.println("Employee detail that you updated are followings.");
@@ -79,9 +79,11 @@ public class Employee {
         System.out.println("Position : " + position);
         System.out.println("Date of birth : " + birthDay);
         System.out.println("Contact : " + contact);
+        System.out.println("Permanent: " + permanent);
+
 
         DBConnect connect = new DBConnect();
-        connect.updateEmployee(name,position,birthDay,contact,id);
+        connect.updateEmployee(name,position,birthDay,contact,permanent,id);
 
     }
 

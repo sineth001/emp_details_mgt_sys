@@ -28,8 +28,9 @@ CREATE TABLE `employee` (
   `position` varchar(45) DEFAULT NULL,
   `birth_day` date DEFAULT NULL,
   `contact_number` varchar(45) DEFAULT NULL,
+  `permanent` varchar(5) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +39,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (2,'udara','software engineer','1992-02-02','4216677887'),(3,'sineth','tranee software engineer','1992-10-10','677865667');
+INSERT INTO `employee` VALUES (2,'udara','se','1990-04-29','456789','no'),(3,'sineth','traniee','1992-02-07','0757656080','no'),(5,'jaliya','asc','1992-02-02','4554566','yes');
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-09 13:56:28
+-- Dump completed on 2018-10-09 16:37:41

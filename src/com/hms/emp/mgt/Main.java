@@ -19,29 +19,42 @@ public class Main {
 
 
         Employee emp=new Employee(); // create object
-        emp.viewEmployeeDetail();
+        Permanent pemp=new Permanent();// create object
+        pemp.viewEmployeeDetail();//Encapsulation.
         System.out.println();
 
+
         System.out.println("Enter 1 for Insert new employee");
-        System.out.println("Enter 2 for Update new employee");
-        System.out.println("Enter 3 for Delete an employee");
+        System.out.println("Enter 2 for Insert permanent employee");
+        System.out.println("Enter 3 for Update new employee");
+        System.out.println("Enter 4 for Update permanent employee");
+        System.out.println("Enter 5 for Delete an employee");
+
+
 
         Scanner keyboard=new Scanner(System.in);
         int input=keyboard.nextInt();
 
         switch(input) {
-            case 1 :
+
+            case 1 ://Insert new employee
                 emp.enterEmployeeDetail();
                 break;
 
-            case 2 :
+            case 2 ://Insert permanent employee
+                pemp.enterEmployeeDetail(); //Polymorphism method over loading
+                break;
 
+            case 3 ://Update new employee
                 emp.editEmployeeDetail();
                 break;
 
-            case 3 :
+            case 4 ://permanent employee
+                pemp.editEmployeeDetail();// inheritance
+                break;
 
-                emp.removeEmployee();
+            case 5 ://Delete an employee
+                pemp.removeEmployee();
                 break;
 
 

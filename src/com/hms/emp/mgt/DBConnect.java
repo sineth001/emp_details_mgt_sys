@@ -9,7 +9,7 @@ import java.sql.*;
 
 public class DBConnect {
 
-    private Connection con;
+    private Connection con; //abstraction
     private Statement st;
     private ResultSet rs;
 
@@ -48,9 +48,11 @@ public class DBConnect {
                 String position = rs.getString("position");
                 String birth_date = rs.getString("birth_day");
                 String contact = rs.getString("contact_number");
+                String permanent = rs.getString("permanent");
 
 
-                System.out.println("id :" + id + " name: " + name + "  position: " + position + " Birth day : " + birth_date + " contact number " + contact);
+                System.out.println("id :\t" + id + " name: " + name + "  position: " + position +
+                        " Birth day : " + birth_date + " contact number : " + contact+"  permanent : "+permanent);
             }
 
         } catch (Exception ex) {
@@ -68,18 +70,19 @@ public class DBConnect {
      * @param birthDay date of birth
      * @param contact  contact number
      */
-    public void insertEmployee( String name,String position,String birthDay,String contact ) {
+    public void insertEmployee( String name,String position,String birthDay,String contact,String permanent) {
 
         try {
 
-            String query = "insert into employee(name,position,birth_day,contact_number) " +
-                    "values ( ?, ?, ?, ?)";
+            String query = "insert into employee(name,position,birth_day,contact_number,permanent) " +
+                    "values ( ?, ?, ?, ?, ? )";
             PreparedStatement preparedStmt = con.prepareStatement(query);
 
             preparedStmt.setString(1, name);
             preparedStmt.setString(2, position);
             preparedStmt.setString(3, birthDay);
             preparedStmt.setString(4, contact);
+            preparedStmt.setString(5, permanent);
 
             preparedStmt.execute();
 
@@ -100,17 +103,18 @@ public class DBConnect {
      * @param contact contact number
      * @param empId employee id to identify employee
      */
-    public void updateEmployee( String name,String position,String birthDay,String contact, int empId) {
+    public void updateEmployee( String name,String position,String birthDay,String contact,String permanent, int empId) {
 
         try {
 
-            String query = "update employee set name = ?, position= ?,birth_day=?, contact_number=? where id=" + empId;
+            String query = "update employee set name = ?, position= ?,birth_day=?, contact_number=?, permanent=? where id=" + empId;
             PreparedStatement preparedStmt = con.prepareStatement(query);
 
             preparedStmt.setString(1, name);
             preparedStmt.setString(2, position);
             preparedStmt.setString(3, birthDay);
             preparedStmt.setString(4, contact);
+            preparedStmt.setString(5, permanent);
 
             preparedStmt.executeUpdate();
 
