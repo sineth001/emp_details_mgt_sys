@@ -42,7 +42,7 @@ public class Main {
                 break;
 
             case 2 ://Insert permanent employee
-                pemp.enterEmployeeDetail(); //Polymorphism method over loading
+                pemp.enterEmployeeDetail(); //Polymorphism -method overriding
                 break;
 
             case 3 ://Update new employee

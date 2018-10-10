@@ -7,7 +7,7 @@ public class Permanent extends Employee{
   /**
      * Get user input to add new employee
      */
-    public void  enterEmployeeDetail() { //Polymorphism method over loading
+    public void  enterEmployeeDetail() { //Polymorphism- method overriding
 
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Employee  name");
